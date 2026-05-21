@@ -60,6 +60,17 @@ data/nylon/
 └── abnormal/     # anomalous images (provides the test split)
 ```
 
+> **Note on dataset version.** The Kaggle release may grow over time, so the
+> current download may contain images added after the paper's experiments.
+> The paper used a frozen snapshot of **105 normal + 989 defective** nylon
+> images (Methods, "Implementation details"); after arranging the Kaggle
+> download into the layout above, you should see those counts in `train/`
+> and `abnormal/` respectively. The train/val split inside `train/` is
+> generated at runtime by `val_split_ratio: 0.2` in
+> `configs/nylon_sweep.yaml`. Minor numerical differences from the paper's
+> reported AUROCs are expected if the current Kaggle archive is larger than
+> this snapshot.
+
 ### 2.2 Fine-tuned ResNet backbones
 
 Five fine-tuned ResNet checkpoints, one per depth axis of the grid
