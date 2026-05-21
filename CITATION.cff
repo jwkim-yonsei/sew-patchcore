@@ -1,0 +1,57 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite both the software and the paper."
+title: "sew-patchcore: nylon 700-cell hyper-parameter sweep for the FT-PatchCore sewing-defect study"
+abstract: >-
+  Computer code accompanying the Scientific Reports paper on PatchCore-based
+  anomaly detection for sewing-defect inspection. This archive bundles the
+  700-cell PatchCore hyper-parameter sweep on the nylon fabric subset
+  (finetuning x ResNet depth x sampling ratio x layer combination), which
+  produces the values behind Figures 7-11 and the Table 4 (S0-S3) ablation
+  reported in the paper. Built on the released anomalib 1.2.0 library with a
+  small MinMax-normalization compatibility patch.
+type: software
+license: Apache-2.0
+version: 1.0.0
+date-released: "2026-05-21"
+authors:
+  - family-names: "Kim"
+    given-names: "Junwon"
+    affiliation: "Department of Intelligent Data and Optimization, Yonsei University"
+  - family-names: "Woo"
+    given-names: "Jong-Heon"
+    affiliation: "Department of Industrial Engineering, Konkuk University"
+  - family-names: "Jung"
+    given-names: "Woo-Kyun"
+    affiliation: "R&D Center, Hojeon Co., Ltd."
+  - family-names: "Kim"
+    given-names: "Hyungjung"
+    affiliation: "Department of Industrial Engineering, Konkuk University"
+repository-code: "https://github.com/jwkim-yonsei/sew-patchcore"
+# TODO after the GitHub release is archived to Zenodo: add the Zenodo DOI here
+# and in README / the paper's "Code availability" section.
+# doi: "10.5281/zenodo.TODO"
+keywords:
+  - anomaly detection
+  - PatchCore
+  - anomalib
+  - fabric inspection
+  - sewing defect
+  - StitchingNet
+preferred-citation:
+  type: article
+  title: "An efficient anomaly detection method for the industrial sewing process using PatchCore and fine-tuned ResNet"
+  authors:
+    - family-names: "Kim"
+      given-names: "Junwon"
+      affiliation: "Department of Intelligent Data and Optimization, Yonsei University"
+    - family-names: "Woo"
+      given-names: "Jong-Heon"
+      affiliation: "Department of Industrial Engineering, Konkuk University"
+    - family-names: "Jung"
+      given-names: "Woo-Kyun"
+      affiliation: "R&D Center, Hojeon Co., Ltd."
+    - family-names: "Kim"
+      given-names: "Hyungjung"
+      affiliation: "Department of Industrial Engineering, Konkuk University"
+  journal: "Scientific Reports"
+  year: 2026

@@ -1,0 +1,46 @@
+# Nylon hyper-parameter sweep — 700-cell PatchCore grid.
+#
+# Grid = finetuning (2) x model (5) x ratio (7) x layers (10) = 700 cells.
+# This grid matches the 700 parametric experimental tests reported in the
+# manuscript (Methods, "Hyperparameter optimization"); the cell-level results
+# back Figs. 7-11 and Table 4 (S0-S3 ablation).
+
+seed: 42
+accelerator: auto          # auto | cpu | cuda  (override: --accelerator / SEWING_ACCELERATOR)
+neighbors: 1               # PatchCore num_neighbors
+
+data:
+  name: nylon
+  root: data/nylon         # relative to repo root; override: --data-root / SEWING_DATA_ROOT
+  normal_dir: train        # normal (good) images
+  abnormal_dir: abnormal   # anomalous images (provides the test split)
+  train_batch_size: 16
+  eval_batch_size: 1
+  num_workers: 2
+  val_split_ratio: 0.2
+
+weights:
+  # Fine-tuned ResNet backbone checkpoints (used only when finetuning: true).
+  # One file per ResNet depth covered by the model axis of the grid.
+  dir: weights/nylon       # override: --weights-dir / SEWING_WEIGHTS_DIR
+  filename_template: "ft_{model}.pt"
+
+results_csv: results/nylon_sweep.csv
+results_dir: results/nylon_sweep
+
+grid:
+  finetuning: [true, false]
+  model: [resnet18, resnet34, resnet50, resnet101, resnet152]
+  ratio: [1, 0.5, 0.25, 0.1, 0.05, 0.01, 0.001]
+  # 10 continuous layer combinations of [layer1..layer4].
+  layers:
+    - [layer1, layer2, layer3, layer4]   # L1234
+    - [layer1, layer2, layer3]           # L123
+    - [layer1, layer2]                   # L12
+    - [layer1]                           # L1
+    - [layer2, layer3, layer4]           # L234
+    - [layer2, layer3]                   # L23
+    - [layer2]                           # L2
+    - [layer3, layer4]                   # L34
+    - [layer3]                           # L3
+    - [layer4]                           # L4

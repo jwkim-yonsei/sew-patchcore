@@ -1,0 +1,29 @@
+# Experiment outputs
+results/
+results-*/
+*.csv
+
+# Model weights / checkpoints (not redistributed — see README)
+weights/
+*.pt
+*.pth
+*.ckpt
+
+# Datasets (downloaded separately — see README)
+data/
+
+# anomalib memory-bank caches (never committed; always recomputed)
+memory_bank/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
