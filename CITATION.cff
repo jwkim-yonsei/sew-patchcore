@@ -27,6 +27,10 @@ authors:
     given-names: "Hyungjung"
     affiliation: "Department of Industrial Engineering, Konkuk University"
 repository-code: "https://github.com/jwkim-yonsei/sew-patchcore"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.20322967"
+    description: "Fine-tuned ResNet weights (companion archive on Zenodo)"
 # TODO after the GitHub release is archived to Zenodo: add the Zenodo DOI here
 # and in README / the paper's "Code availability" section.
 # doi: "10.5281/zenodo.TODO"

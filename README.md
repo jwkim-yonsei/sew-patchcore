@@ -43,13 +43,16 @@ See the comments in `requirements.txt` for why each pin is needed.
 
 The nylon image subset and the fine-tuned ResNet checkpoints are **not**
 included in this archive (too large to redistribute via Git). They are
-distributed separately — see the paper's *Code availability* / *Data
-availability* sections for the download location.
+hosted separately:
+
+- **Dataset** (StitchingNet, nylon subset) — Kaggle: <https://www.kaggle.com/datasets/hyungjung/stitchingnet-dataset>
+- **Fine-tuned weights** (5 ResNet checkpoints) — Zenodo: <https://doi.org/10.5281/zenodo.20322967>
 
 ### 2.1 Nylon image dataset
 
-The nylon fabric subset of the StitchingNet sewing-defect data (see
-Methods, "Implementation details" for split sizes):
+The nylon fabric subset of the StitchingNet sewing-defect data
+([Kaggle](https://www.kaggle.com/datasets/hyungjung/stitchingnet-dataset);
+see Methods, "Implementation details" for split sizes):
 
 ```
 data/nylon/
@@ -61,7 +64,9 @@ data/nylon/
 
 Five fine-tuned ResNet checkpoints, one per depth axis of the grid
 (ResNet-18, 34, 50, 101, 152), are loaded into the PatchCore feature
-extractor when `finetuning: true`:
+extractor when `finetuning: true`. Download the
+[`nylon_ft_full.zip`](https://doi.org/10.5281/zenodo.20322967) archive from
+Zenodo (DOI `10.5281/zenodo.20322967`) and unzip into `weights/`:
 
 ```
 weights/nylon/
